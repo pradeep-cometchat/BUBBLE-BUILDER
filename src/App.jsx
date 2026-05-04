@@ -539,8 +539,8 @@ export default function App() {
         <div className="text-[13px] font-medium text-white/60 mt-1">Mon, May 4</div>
       </div>
 
-      {/* Notification card */}
-      <div className="absolute bottom-20 left-3 right-3">
+      {/* Notification card — below time */}
+      <div className="px-3 mt-6">
         <div className="rounded-2xl bg-white/12 backdrop-blur-xl p-3.5 border border-white/10">
           <div className="flex items-start gap-2.5">
             <div className="w-8 h-8 rounded-full bg-violet-500 shrink-0 flex items-center justify-center">
@@ -560,7 +560,7 @@ export default function App() {
       </div>
 
       {/* Android nav bar */}
-      <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-8">
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-12">
         <div className="w-4 h-4 border-2 border-white/30 rounded-sm" />
         <div className="w-4 h-4 rounded-full border-2 border-white/30" />
         <div className="w-0 h-0 border-l-[8px] border-l-white/30 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent" />
@@ -634,29 +634,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* zoom toolbar */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-0.5 bg-white rounded-full border border-neutral-200 shadow-sm px-2 py-1">
-        <button className="w-8 h-8 rounded-full hover:bg-neutral-100 flex items-center justify-center text-neutral-600 transition-colors">
-          <M icon="remove" size={18} />
-        </button>
-        <span className="text-[12px] font-medium text-neutral-700 px-1.5 tabular-nums min-w-[36px] text-center">84%</span>
-        <button className="w-8 h-8 rounded-full hover:bg-neutral-100 flex items-center justify-center text-neutral-600 transition-colors">
-          <M icon="add" size={18} />
-        </button>
-        <div className="w-px h-4 bg-neutral-200 mx-1" />
-        <button className="w-8 h-8 rounded-full hover:bg-neutral-100 flex items-center justify-center text-neutral-600 transition-colors">
-          <M icon="fit_screen" size={18} />
-        </button>
-        <button className="w-8 h-8 rounded-full hover:bg-neutral-100 flex items-center justify-center text-neutral-600 transition-colors">
-          <M icon="visibility" size={18} />
-        </button>
-        <button className="w-8 h-8 rounded-full hover:bg-neutral-100 flex items-center justify-center text-neutral-600 transition-colors">
-          <M icon="data_object" size={18} />
-        </button>
-        <button className="w-8 h-8 rounded-full hover:bg-neutral-100 flex items-center justify-center text-neutral-600 transition-colors">
-          <M icon="help_outline" size={18} />
-        </button>
-      </div>
     </div>
   );
 
