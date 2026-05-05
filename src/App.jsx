@@ -339,21 +339,21 @@ export default function App() {
   const ChatPhonePreview = () => {
     const dark = previewDark;
     return (
-    <div className={`relative w-[340px] h-[780px] rounded-[24px] border shadow-sm overflow-hidden flex flex-col shrink-0 ${dark ? 'bg-[#1e1e2e] border-neutral-700/60' : 'bg-neutral-50 border-neutral-200'}`}>
+    <div className={`relative w-[340px] h-[780px] rounded-[24px] border shadow-sm overflow-hidden flex flex-col shrink-0 ${dark ? 'bg-[#1c1c28] border-[#2e2e3e]' : 'bg-neutral-50 border-neutral-200'}`}>
       {/* header — title only, transparent bg */}
-      <div className={`px-4 py-3 border-b ${dark ? 'border-neutral-700/40' : 'border-neutral-200'}`}>
-        <span className={`text-[15px] font-semibold ${dark ? 'text-neutral-100' : 'text-neutral-900'}`}>Notifications</span>
+      <div className={`px-4 py-3 border-b ${dark ? 'border-[#2e2e3e]' : 'border-neutral-200'}`}>
+        <span className={`text-[15px] font-semibold ${dark ? 'text-neutral-50' : 'text-neutral-900'}`}>Notifications</span>
       </div>
 
       {/* chips row */}
-      <div className={`px-3 py-2.5 flex items-center gap-2 border-b ${dark ? 'border-neutral-700/40' : 'border-neutral-100'}`}>
+      <div className={`px-3 py-2.5 flex items-center gap-2 border-b ${dark ? 'border-[#2e2e3e]' : 'border-neutral-100'}`}>
         <span className={`shrink-0 px-3 py-1.5 rounded-full text-[11.5px] font-medium ${dark ? 'bg-violet-500 text-white' : 'bg-violet-600 text-white'}`}>Promotions</span>
         {['Updates', 'Alerts', 'Social'].map((label) => (
           <button
             key={label}
             className={`shrink-0 px-3 py-1.5 rounded-full border border-dashed text-[11.5px] font-medium transition-colors ${
               dark
-                ? 'border-neutral-600/50 text-neutral-400 hover:border-neutral-500 hover:text-neutral-300'
+                ? 'border-[#4a4a5e] text-neutral-300 hover:border-violet-400/60 hover:text-neutral-200'
                 : 'border-neutral-300 text-neutral-500 hover:border-neutral-400 hover:text-neutral-700'
             }`}
           >
@@ -362,7 +362,7 @@ export default function App() {
         ))}
         <button className={`shrink-0 w-7 h-7 rounded-full border border-dashed flex items-center justify-center transition-colors ${
           dark
-            ? 'border-neutral-600/50 text-neutral-500 hover:border-neutral-500 hover:text-neutral-400'
+            ? 'border-[#4a4a5e] text-neutral-400 hover:border-violet-400/60 hover:text-neutral-300'
             : 'border-neutral-300 text-neutral-400 hover:border-neutral-400 hover:text-neutral-600'
         }`}>
           <M icon="add" size={15} />
@@ -370,25 +370,25 @@ export default function App() {
       </div>
 
       {/* messages */}
-      <div className={`flex-1 overflow-y-auto px-3 flex flex-col ${dark ? 'bg-[#1e1e2e]' : 'bg-neutral-50'}`}>
+      <div className={`flex-1 overflow-y-auto px-3 flex flex-col ${dark ? 'bg-[#1c1c28]' : 'bg-neutral-50'}`}>
         {!hasContent ? (
           <div className="flex-1 flex items-center justify-center py-3">
           <button
             onClick={() => setHasContent(true)}
             className={`w-full rounded-xl border-2 border-dashed py-10 flex flex-col items-center gap-3 transition-all group cursor-pointer ${
               dark
-                ? 'border-neutral-700/50 bg-neutral-800/30 hover:border-violet-500/50 hover:bg-violet-900/15'
+                ? 'border-[#3a3a4e] bg-[#24243a]/50 hover:border-violet-400/50 hover:bg-violet-900/20'
                 : 'border-neutral-300 bg-white/60 hover:border-violet-400 hover:bg-violet-50/30'
             }`}
           >
             <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
-              dark ? 'bg-neutral-800/40 group-hover:bg-violet-900/30' : 'bg-neutral-100 group-hover:bg-violet-100'
+              dark ? 'bg-[#2e2e42] group-hover:bg-violet-800/30' : 'bg-neutral-100 group-hover:bg-violet-100'
             }`}>
-              <M icon="add" size={24} className={`transition-colors ${dark ? 'text-neutral-500 group-hover:text-violet-400' : 'text-neutral-400 group-hover:text-violet-600'}`} />
+              <M icon="add" size={24} className={`transition-colors ${dark ? 'text-neutral-300 group-hover:text-violet-300' : 'text-neutral-400 group-hover:text-violet-600'}`} />
             </div>
             <div className="text-center">
-              <div className={`text-[13px] font-medium transition-colors ${dark ? 'text-neutral-300 group-hover:text-violet-400' : 'text-neutral-700 group-hover:text-violet-700'}`}>Add an element</div>
-              <div className={`text-[12px] mt-0.5 ${dark ? 'text-neutral-500' : 'text-neutral-500'}`}>Drag from the left panel or click here</div>
+              <div className={`text-[13px] font-medium transition-colors ${dark ? 'text-neutral-200 group-hover:text-violet-300' : 'text-neutral-700 group-hover:text-violet-700'}`}>Add an element</div>
+              <div className={`text-[12px] mt-0.5 ${dark ? 'text-neutral-400' : 'text-neutral-500'}`}>Drag from the left panel or click here</div>
             </div>
           </button>
           </div>
@@ -396,13 +396,13 @@ export default function App() {
           <div className="py-3">
           {/* Category + Timestamp row — outside the card */}
           <div className="flex items-center justify-between mb-2 px-0.5">
-            <span className={`text-[13px] font-semibold ${dark ? 'text-white' : 'text-neutral-900'}`}>Category</span>
-            <span className={`flex items-center gap-1.5 text-[12px] ${dark ? 'text-neutral-400' : 'text-neutral-500'}`}>
+            <span className={`text-[13px] font-semibold ${dark ? 'text-neutral-50' : 'text-neutral-900'}`}>Category</span>
+            <span className={`flex items-center gap-1.5 text-[12px] ${dark ? 'text-neutral-300' : 'text-neutral-500'}`}>
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               Time stamp
             </span>
           </div>
-          <div className={`rounded-xl border overflow-hidden shadow-sm ${dark ? 'bg-[#262638] border-neutral-700/40' : 'bg-white border-neutral-200/70'}`}>
+          <div className={`rounded-xl border overflow-hidden shadow-sm ${dark ? 'bg-[#24243a] border-[#3a3a4e]' : 'bg-white border-neutral-200/70'}`}>
             {/* product image area */}
             <div
               className={`aspect-square bg-gradient-to-br from-violet-100 via-violet-50 to-indigo-100 relative overflow-hidden cursor-pointer ${selectedElement === 'image' ? 'ring-2 ring-violet-500 ring-inset' : ''}`}
@@ -425,7 +425,7 @@ export default function App() {
 
             <div className={`p-3.5 ${dark ? 'text-neutral-200' : ''}`} onClick={(e) => { e.stopPropagation(); setSelectedElement(null); }}>
               <div
-                className={`text-[13px] font-semibold cursor-pointer rounded-md px-1 -mx-1 transition-all ${selectedElement === 'text' ? 'ring-2 ring-violet-500 ring-offset-1' : 'hover:bg-violet-50/50'} ${dark ? 'text-neutral-100' : 'text-neutral-900'}`}
+                className={`text-[13px] font-semibold cursor-pointer rounded-md px-1 -mx-1 transition-all ${selectedElement === 'text' ? 'ring-2 ring-violet-500 ring-offset-1' : 'hover:bg-violet-50/50'} ${dark ? 'text-neutral-50' : 'text-neutral-900'}`}
                 onClick={(e) => { e.stopPropagation(); setSelectedElement('text'); setRightTab('element'); }}
               >Product Title</div>
               <div
@@ -433,7 +433,7 @@ export default function App() {
                 onClick={(e) => { e.stopPropagation(); setSelectedElement('price'); setRightTab('element'); }}
               >$0.00</div>
               <div
-                className={`text-[11.5px] mt-1 cursor-pointer rounded-md px-1 -mx-1 transition-all ${selectedElement === 'description' ? 'ring-2 ring-violet-500 ring-offset-1' : 'hover:bg-violet-50/50'} ${dark ? 'text-neutral-400' : 'text-neutral-500'}`}
+                className={`text-[11.5px] mt-1 cursor-pointer rounded-md px-1 -mx-1 transition-all ${selectedElement === 'description' ? 'ring-2 ring-violet-500 ring-offset-1' : 'hover:bg-violet-50/50'} ${dark ? 'text-neutral-300' : 'text-neutral-500'}`}
                 onClick={(e) => { e.stopPropagation(); setSelectedElement('description'); setRightTab('element'); }}
               >Product description goes here.</div>
               <div
@@ -455,7 +455,7 @@ export default function App() {
                 <span className="text-[12.5px] font-semibold text-emerald-600">Order Confirmed</span>
               </div>
 
-              <div className={`mt-3 pt-2.5 border-t space-y-1 text-[11.5px] ${dark ? 'border-neutral-700/40 text-neutral-400' : 'border-neutral-100 text-neutral-600'}`}>
+              <div className={`mt-3 pt-2.5 border-t space-y-1 text-[11.5px] ${dark ? 'border-[#3a3a4e] text-neutral-300' : 'border-neutral-100 text-neutral-600'}`}>
                 <div className="flex gap-2"><span>Order ID:</span><code className="px-1.5 py-0.5 rounded bg-violet-50 text-violet-700 text-[10.5px]">{'{{order.id}}'}</code></div>
                 <div className="flex gap-2"><span>Total:</span><code className="px-1.5 py-0.5 rounded bg-violet-50 text-violet-700 text-[10.5px]">{'{{order.total}}'}</code></div>
                 <div className="flex gap-2"><span>Delivery:</span><code className="px-1.5 py-0.5 rounded bg-violet-50 text-violet-700 text-[10.5px]">{'{{order.deliveryDate}}'}</code></div>
@@ -834,9 +834,9 @@ export default function App() {
                 value={alignment}
                 onChange={setAlignment}
                 options={[
-                  { value: 'start', icon: 'align_horizontal_left', label: 'Start' },
-                  { value: 'center', icon: 'align_horizontal_center', label: 'Center' },
-                  { value: 'end', icon: 'align_horizontal_right', label: 'End' },
+                  { value: 'start', icon: 'vertical_align_top', label: 'Top' },
+                  { value: 'center', icon: 'vertical_align_center', label: 'Center' },
+                  { value: 'end', icon: 'vertical_align_bottom', label: 'Bottom' },
                 ]}
               />
             </FieldRow>
