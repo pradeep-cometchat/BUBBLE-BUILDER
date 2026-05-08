@@ -47,9 +47,9 @@ const FieldRow = ({ label, children }) => (
 function ColorInput({ label, value, onChange }) {
   const [preview, setPreview] = useState(value);
   return (
-    <div>
-      <div className="text-[13px] text-neutral-600 mb-1.5">{label}</div>
-      <div className="flex items-center gap-2">
+    <div className="flex items-center gap-3">
+      <span className="text-[13px] text-neutral-600 w-[100px] shrink-0">{label}</span>
+      <div className="flex-1 flex items-center gap-2">
         <div className="relative w-10 h-10 shrink-0">
           <div className="w-10 h-10 rounded-lg border border-neutral-200 pointer-events-none" style={{ backgroundColor: preview }} />
           <input
@@ -199,7 +199,17 @@ function RowPanel({ node, onUpdate }) {
       <Section title="Layout">
         <FieldRow label="Label"><Input value={node.props.label || ''} onChange={(v) => onUpdate({ label: v })} /></FieldRow>
         <FieldRow label="Gap"><Input value={String(node.props.gap || 8)} onChange={(v) => onUpdate({ gap: parseInt(v) || 0 })} /></FieldRow>
-        <FieldRow label="Wrap"><Select value={node.props.wrap ? 'Yes' : 'No'} options={['Yes', 'No']} onChange={(v) => onUpdate({ wrap: v === 'Yes' })} /></FieldRow>
+        <div className="flex items-center gap-3">
+          <span className="text-[13px] text-neutral-600 w-[100px] shrink-0">Wrap</span>
+          <div className="flex-1 flex justify-end">
+            <button
+              onClick={() => onUpdate({ wrap: !node.props.wrap })}
+              className={`w-10 h-6 rounded-full transition-colors relative ${node.props.wrap ? 'bg-violet-600' : 'bg-neutral-200'}`}
+            >
+              <div className={`w-5 h-5 rounded-full bg-white shadow-sm absolute top-0.5 transition-transform ${node.props.wrap ? 'translate-x-[18px]' : 'translate-x-0.5'}`} />
+            </button>
+          </div>
+        </div>
         <PaddingControl node={node} onUpdate={onUpdate} />
       </Section>
       <Section title="Frame" noBorder><RadiusControl node={node} onUpdate={onUpdate} /></Section>

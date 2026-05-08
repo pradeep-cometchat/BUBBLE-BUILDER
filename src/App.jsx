@@ -647,21 +647,21 @@ export default function App() {
               }
             }}
             className={`flex items-center gap-2 py-1.5 px-2 rounded-lg text-left relative transition-all w-full ${
-              isSelected ? 'bg-violet-50 ring-1 ring-violet-200' : 'hover:bg-neutral-50'
+              isSelected ? 'bg-neutral-100 text-neutral-900' : 'hover:bg-neutral-50'
             }`}
             style={{ marginLeft: depth > 0 ? `${depth * 22 + 4}px` : '0', width: depth > 0 ? `calc(100% - ${depth * 22 + 4}px)` : '100%' }}
           >
             {hasChildren ? (
-              <span onClick={(e) => { e.stopPropagation(); toggleNode(node.id); }} className={`shrink-0 cursor-pointer rounded hover:bg-neutral-200/50 p-0.5 ${isSelected ? 'text-violet-600' : 'text-neutral-400'}`}>
+              <span onClick={(e) => { e.stopPropagation(); toggleNode(node.id); }} className={`shrink-0 cursor-pointer rounded hover:bg-neutral-200/50 p-0.5 ${isSelected ? 'text-neutral-700' : 'text-neutral-400'}`}>
                 <M icon={isExpanded ? 'expand_more' : 'chevron_right'} size={15} />
               </span>
             ) : (
               <span className="w-[15px] shrink-0" />
             )}
-            <div className={`w-6 h-6 rounded border flex items-center justify-center shrink-0 ${isSelected ? 'border-violet-300 bg-violet-50' : 'border-neutral-200 bg-white'}`}>
-              <M icon={getNodeIcon(node.type)} size={14} className={isSelected ? 'text-violet-600' : 'text-neutral-600'} />
+            <div className={`w-6 h-6 rounded border flex items-center justify-center shrink-0 ${isSelected ? 'border-neutral-300 bg-white' : 'border-neutral-200 bg-white'}`}>
+              <M icon={getNodeIcon(node.type)} size={14} className={isSelected ? 'text-neutral-900' : 'text-neutral-600'} />
             </div>
-            <span className={`truncate ${hasChildren ? `text-[13.5px] font-semibold ${isSelected ? 'text-violet-700' : 'text-neutral-900'}` : `text-[13px] font-medium ${isSelected ? 'text-violet-700' : 'text-neutral-700'}`}`}>{getNodeLabel(node)}</span>
+            <span className={`truncate ${hasChildren ? `text-[13.5px] font-semibold ${isSelected ? 'text-neutral-900' : 'text-neutral-900'}` : `text-[13px] font-medium ${isSelected ? 'text-neutral-900' : 'text-neutral-700'}`}`}>{getNodeLabel(node)}</span>
           </button>
           {hasChildren && isExpanded && (
             <div className="mt-1">

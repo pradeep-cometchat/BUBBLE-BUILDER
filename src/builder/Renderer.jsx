@@ -63,13 +63,13 @@ function SortableNode({ node, dark, selectedId, onSelect, onRemove, onMoveUp, on
   return (
     <div ref={setNodeRef} style={style} {...attributes} className={`relative ${isTopLevel ? 'group/parent' : ''} ${isDragging ? 'z-50' : ''}`}>
       {showHoverToolbar && (
-        <div className="absolute -top-3 right-1 z-30 opacity-0 group-hover/parent:opacity-100 transition-opacity pointer-events-none group-hover/parent:pointer-events-auto">
+        <div className="absolute -top-3 left-1 z-30 opacity-0 group-hover/parent:opacity-100 transition-opacity pointer-events-none group-hover/parent:pointer-events-auto">
           <ActionToolbar nodeId={node.id} isFirst={isFirst} isLast={isLast} onRemove={onRemove} onMoveUp={onMoveUp} onMoveDown={onMoveDown} onDuplicate={onDuplicate} dragListeners={listeners} />
         </div>
       )}
 
       {!isTopLevel && isSelected && (
-        <div className="absolute -top-3 right-1 z-30">
+        <div className="absolute -top-3 left-1 z-30">
           <ActionToolbar nodeId={node.id} isFirst={isFirst} isLast={isLast} onRemove={onRemove} onMoveUp={onMoveUp} onMoveDown={onMoveDown} onDuplicate={onDuplicate} dragListeners={listeners} />
         </div>
       )}
